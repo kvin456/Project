@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!Kevin Cevalls>
+
+<html>
+<head>
+    <title>Six Squares Template</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            height: 100vh;
+        }
+
+        .grid-item {
+            border: 1px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item">Square 1</div>
+        <div class="grid-item">Square 2</div>
+        <div class="grid-item">Square 3</div>
+        <div class="grid-item">Square 4</div>
+        <div class="grid-item">Square 5</div>
+        <div class="grid-item">Square 6</div>
+    </div>
+</body>
+</html>
