@@ -41,13 +41,15 @@
         function fetchStockPrice() {
             const symbolInput = document.getElementById("stockSymbol");
             const symbol = symbolInput.value.toUpperCase();
-            const url = `https://api.example.com/stock/${symbol}/price`; // Replace with your API endpoint
+            const apiKey = "2eet22pwsEuaibdOfnYcIFis5UCO5gqm"; // Replace with your Polygon.io API key
+            const url = `https://api.polygon.io/v1/last/stocks/${symbol}?apiKey=${apiKey}`;
 
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
                     const priceDisplay = document.getElementById("priceDisplay");
-                    priceDisplay.textContent = `Current price of ${symbol}: $${data.price}`;
+                    const price = data.results[symbol].last.price;
+                    priceDisplay.textContent = `Current price of ${symbol}: $${price}`;
                 })
                 .catch(error => {
                     console.error(error);
@@ -69,4 +71,3 @@
     </div>
 </body>
 </html>
-
